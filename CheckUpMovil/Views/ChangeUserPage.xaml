@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="CheckUpMovil.Views.ChangeUserPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+            
+                <StackLayout Grid.Column="0" Grid.Row="0" Orientation="Vertical" Margin="20" Padding="10">
+                    <StackLayout Margin="10">
+                        <Label Text="Cambio de usuario" FontSize="Title" FontAttributes="Bold" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center"
+                               TextColor="{DynamicResource colorPrimary}"/>
+                    </StackLayout>
+                    <StackLayout>
+                        <Label Text="Usuario Actual" FontSize="Medium" TextColor="Black" />
+                        <Entry Text="Usuario" IsReadOnly="True" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start"/>
+                    </StackLayout>
+                    <StackLayout>
+                        <Label Text="No. Economico" FontSize="Medium" TextColor="Black" />
+                        <Entry Text="No. Economico" IsReadOnly="True" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start"/>
+                    </StackLayout>
+                    <StackLayout>
+                        <Label Text="Placas" FontSize="Medium" TextColor="Black" />
+                        <Entry Text="Placas" IsReadOnly="True" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start"/>
+                    </StackLayout>
+                    <StackLayout Margin="10">
+                        <Label Text="Enviar a:" FontSize="Title" FontAttributes="Bold" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center"
+                               TextColor="{DynamicResource colorPrimary}"/>
+                    </StackLayout>
+                    <StackLayout>
+                        <Label Text="Nuevo Usuario" FontSize="Medium" TextColor="Black" />
+                        <Entry Text="Usuario" IsReadOnly="True" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start"/>
+                    </StackLayout>
+                    <StackLayout>
+                        <Label Text="Celular" FontSize="Medium" TextColor="Black" />
+                        <Entry Text="Celular" IsReadOnly="True" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start" Keyboard="Telephone"/>
+                    </StackLayout>
+                    <StackLayout>
+                        <Label Text="Correo" FontSize="Medium" TextColor="Black" />
+                        <Entry Text="Correo" IsReadOnly="True" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start" Keyboard="Email"/>
+                    </StackLayout>
+                    <StackLayout VerticalOptions="EndAndExpand">
+                        <Image HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand" Source="logo220" HeightRequest="100" />
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Grid.Column="0" Grid.Row="0" BackgroundColor="{Binding loadBackColor}" IsVisible="{Binding IsBusy}" >
+                    <ActivityIndicator Color="{DynamicResource colorPrimary}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+                                       IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}">
+                    </ActivityIndicator>
+                </StackLayout>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

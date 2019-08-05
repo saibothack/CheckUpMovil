@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="CheckUpMovil.Views.SinisterPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>       
+
+            
+                <StackLayout Grid.Column="0" Grid.Row="0" Orientation="Vertical" Margin="20" Padding="10">
+                    <StackLayout Margin="10">
+                        <Label Text="Siniestro" FontSize="Title" FontAttributes="Bold" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center"
+                               TextColor="{DynamicResource colorPrimary}"/>
+                    </StackLayout>
+                    <StackLayout>
+                        <Label Text="No. Economico" FontSize="Medium" TextColor="Black" />
+                        <Entry Text="No. Economico" IsReadOnly="True" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start"/>
+                    </StackLayout>
+                    <StackLayout>
+                        <Label Text="Placas" FontSize="Medium" TextColor="Black" />
+                        <Entry Text="Placas" IsReadOnly="True" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start"/>
+                    </StackLayout>
+                    <StackLayout>
+                        <Label Text="No. Poliza" FontSize="Medium" TextColor="Black" />
+                        <Entry Text="No. Poliza" IsReadOnly="True" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                            <Label Text="Teléfono Aseguradora" FontSize="Medium" TextColor="Black" />
+                            <Entry Text="Teléfono Aseguradora" IsReadOnly="True" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start"/>
+                        </StackLayout>
+                        <StackLayout WidthRequest="50" HorizontalOptions="EndAndExpand">
+                            <Label Text="Llamar" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center"/>
+                            <ImageButton Source="speech.png" Clicked="Handle_Clicked_Call"/>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="El auto funciona:" FontSize="Medium" />
+                        <Switch IsToggled="true"/>
+                    </StackLayout>
+
+                   <StackLayout>
+                        <Label Text="Observaciones" FontSize="Medium" TextColor="Black" />
+                        <Editor HeightRequest="100" />
+                    </StackLayout>
+
+                    <StackLayout>
+                        <Label Text="Fecha Siniestro" FontSize="Medium" TextColor="Black" />
+                        <DatePicker MinimumDate="01/01/2018" MaximumDate="12/31/2018" Date="06/21/2018" />
+                    </StackLayout>
+                    
+                    <StackLayout VerticalOptions="EndAndExpand" Orientation="Horizontal">
+                        <Button Text="Enviar" TextColor="{DynamicResource colorContrast}" BackgroundColor="Transparent" Clicked="Handle_Clicked" />
+                        <Image HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand" Source="logo220" HeightRequest="100" />
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Grid.Column="0" Grid.Row="0" BackgroundColor="{Binding loadBackColor}" IsVisible="{Binding IsBusy}" >
+                    <ActivityIndicator Color="{DynamicResource colorPrimary}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+                                       IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}">
+                    </ActivityIndicator>
+                </StackLayout>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

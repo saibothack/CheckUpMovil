@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="CheckUpMovil.Views.HomePageDetail" Title="Inicio">
+    <StackLayout Padding="10" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="20">
+        <StackLayout>
+            <Label Text="Usuario" FontSize="Large" TextColor="Black" />
+            <Entry Text="Usuario" IsReadOnly="True" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start"/>
+        </StackLayout>
+        <StackLayout>
+            <Label Text="No. Economico" FontSize="Large" TextColor="Black" />
+            <Entry Text="No. Economico" IsReadOnly="True" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start"/>
+        </StackLayout>
+        <StackLayout>
+            <Label Text="Placas" FontSize="Large" TextColor="Black" />
+            <Entry Text="Placas" IsReadOnly="True" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start"/>
+        </StackLayout>
+        <StackLayout VerticalOptions="EndAndExpand">
+            <Image HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand" Source="logo220" HeightRequest="100" />
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

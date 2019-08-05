@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="CheckUpMovil.Views.LoginPage"
+             NavigationPage.HasNavigationBar="false">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <StackLayout Grid.Column="0" Grid.Row="0" Orientation="Vertical">
+                <StackLayout Margin="70">
+                    <Label Text="Entrar" FontSize="Title" FontAttributes="Bold" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center"
+                           TextColor="{DynamicResource colorPrimary}"/>
+                </StackLayout>
+                <StackLayout Margin="20,0,20,0" Orientation="Vertical">
+                    <Label Text="Usuario" HorizontalOptions="StartAndExpand" TextColor="Black" FontSize="Subtitle"/>
+                    <Entry x:Name="txtEmail" Keyboard="Email" Placeholder="Ingrese su usuario" HeightRequest="40"
+                           Text="{Binding sEmail, Mode=TwoWay}" ReturnCommand="{Binding ReturnCommandEntry}"
+                           ReturnCommandParameter="{x:Reference  txtPassword}"/>
+                    <Label Text="{Binding sEmailError}" IsVisible="{Binding bEmailError}" TextColor="{DynamicResource colorContrast}" />
+                </StackLayout>
+                <StackLayout Margin="20,0,20,0" Orientation="Vertical">
+                    <Label Text="Contraseña" HorizontalOptions="StartAndExpand" TextColor="Black" FontSize="Subtitle"/>
+                    <Entry x:Name="txtPassword" IsPassword="true" Keyboard="Text" Placeholder="Ingrese su contraseña" HeightRequest="40"
+                           Text="{Binding sPassword, Mode=TwoWay}"/>
+                    <Label Text="{Binding sPasswordError}" IsVisible="{Binding bPasswordError}" TextColor="{DynamicResource colorContrast}" />
+                </StackLayout>
+                <StackLayout>
+                    <Button Text="Siguiente" TextColor="{DynamicResource colorContrast}" BackgroundColor="Transparent" Clicked="Handle_Clicked"/>
+                </StackLayout>
+                <StackLayout VerticalOptions="EndAndExpand">
+                    <Image HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand" Source="logo220" HeightRequest="100" />
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout Grid.Column="0" Grid.Row="0" BackgroundColor="{Binding loadBackColor}" IsVisible="{Binding IsBusy}" >
+                <ActivityIndicator Color="{DynamicResource colorPrimary}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+                                   IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}">
+                </ActivityIndicator>
+            </StackLayout>
+        </Grid>
+        
+    </ContentPage.Content>
+</ContentPage>
